@@ -38,7 +38,7 @@ for index, row in data.iterrows():
 
 ## 2、 安装依赖
 
-1、首先安装cn_clip
+(1) 首先安装cn_clip
 
 因为官方仓库有一点小bug，所以从我fork后的仓库安装
 ```bash
@@ -50,7 +50,7 @@ pip install -e .
 **注意：** 必须得从源码安装，否则会报错缺少配置文件
 
 
-2、安装其它依赖
+(2) 安装其它依赖
 
 ```bash
 pip install -r requirements.txt
