@@ -33,7 +33,7 @@ for index, row in data.iterrows():
 
 ```
 
-利用以上代码将图片和图片base64数据保存为本地png图片
+利用以上代码将图片和图片base64数据保存为本地png图片，放到：`data/images` 文件夹下
 
 
 ## 2、 安装依赖
