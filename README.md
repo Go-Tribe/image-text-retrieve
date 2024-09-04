@@ -1,7 +1,37 @@
 # 使用Qdrant + cnclip + gradio 实现图文检索
 
+## 1、数据准备
 
-## 1. 安装依赖
+下载链接：[图文检索图片数据](https://tianchi.aliyun.com/competition/entrance/532031/information)
+
+```python
+import base64
+import pandas as pd
+from io import BytesIO
+from PIL import Image
+import os
+
+data_path = "./data/MR_valid_imgs.tsv"
+save_dir = "./data/images"
+
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+
+data = pd.read_csv(data_path, header=None, sep='\t')
+
+for index, row in data.iterrows():
+    image_id = row[0]
+    image_data = row[1]
+
+    img = Image.open(BytesIO(base64.urlsafe_b64decode(image_data)))
+    img.save(os.path.join(save_dir, f"{image_id}.png"))
+
+```
+
+利用以上代码将图片和图片base64数据保存为本地png图片
+
+
+## 2、 安装依赖
 
 1、首先安装cn_clip
 
@@ -22,7 +52,7 @@ pip install -r requirements.txt
 ```
 
 
-## 2、启动web demo
+## 3、启动web demo
 
 ```bash
 python web_demo.py
