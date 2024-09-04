@@ -1,4 +1,4 @@
-# 使用Qdrant + cnclip + gradio 实现图文检索
+# 使用Qdrant + CNCLIP + Gradio 实现图文检索
 
 ![Alt text](./data/assets/image1.png)
 
