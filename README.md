@@ -1,5 +1,10 @@
 # 使用Qdrant + cnclip + gradio 实现图文检索
 
+![Alt text](./data/assets/image1.png)
+
+![Alt text](./data/assets/image2.png)
+
+
 ## 1、数据准备
 
 下载链接：[图文检索图片数据](https://tianchi.aliyun.com/competition/entrance/532031/information)
@@ -62,3 +67,4 @@ python web_demo.py
 ## 其它
 
 如果想使用 tensorrt 推理，安装 tensorrt==8.6.1 版本即可（已测试），会比torch快很多
+
