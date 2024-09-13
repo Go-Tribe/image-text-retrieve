@@ -1,13 +1,13 @@
-# 使用Qdrant + CNCLIP + Gradio 实现图文检索
+# Using Qdrant + CNCLIP + Gradio to Implement Image-Text Retrieval
 
 ![Alt text](./data/assets/image1.png)
 
 ![Alt text](./data/assets/image2.png)
 
 
-## 1、数据准备
+## 1. Data Preparation
 
-下载链接：[图文检索图片数据](https://tianchi.aliyun.com/competition/entrance/532031/information)
+Download link: [Image-Text Retrieval Image Data](https://tianchi.aliyun.com/competition/entrance/532031/information)
 
 ```python
 import base64
@@ -30,41 +30,38 @@ for index, row in data.iterrows():
 
     img = Image.open(BytesIO(base64.urlsafe_b64decode(image_data)))
     img.save(os.path.join(save_dir, f"{image_id}.png"))
-
 ```
 
-利用以上代码将图片和图片base64数据保存为本地png图片，放到：`data/images` 文件夹下
+The above code saves the images and their base64 data as local PNG images in the `data/images` folder.
 
 
-## 2、 安装依赖
+## 2. Install Dependencies
 
-(1) 首先安装cn_clip
+(1) First, install cn_clip
 
-因为官方仓库有一点小bug，所以从我fork后的仓库安装
+Since there is a small bug in the official repository, install it from my forked repository:
 ```bash
 git clone https://github.com/seanzhang-zhichen/Chinese-CLIP.git
 cd Chinese-CLIP
 pip install -e .
 ```
 
-**注意：** 必须得从源码安装，否则会报错缺少配置文件
+**Note:** You must install from the source code, otherwise you will get an error about missing configuration files.
 
-
-(2) 安装其它依赖
-
+(2) Install other dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
 
-## 3、启动web demo
+## 3. Start the Web Demo
 
 ```bash
 python web_demo.py
 ```
 
 
-## 其它
 
-如果想使用 tensorrt 推理，安装 tensorrt==8.6.1 版本即可（已测试），会比torch快很多
+## Others
 
+If you want to use TensorRT inference, install the `tensorrt==8.6.1` version (already tested), which will be much faster than PyTorch.
