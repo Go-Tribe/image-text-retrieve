@@ -1,3 +1,6 @@
+[English](./README.md)| [中文](./README_ZH.md)
+
+
 # 使用Qdrant + CNCLIP + Gradio 实现图文检索
 
 ![Alt text](./data/assets/image1.png)

@@ -1,3 +1,6 @@
+[English](./README.md)| [中文](./README_ZH.md)
+
+
 # Using Qdrant + CNCLIP + Gradio to Implement Image-Text Retrieval
 
 ![Alt text](./data/assets/image1.png)
